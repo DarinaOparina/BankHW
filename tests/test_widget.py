@@ -6,7 +6,7 @@ from src.widget import mask_account_card, get_data
                          [
                              ("Visa Platinum 7777999967679999", "Visa Platinum 7777 99** **** 9999"),
                              ("Maestro 7777999967679999", "Maestro 7777 99** **** 9999"),
-                             ("Black 77779999676799997777", "Black **7777")
+                             ("Black 9999676799997777", "Black 9999 67** **** 7777")
                          ]
 )
 def test_mask_account_card_success(input_str, expected):
