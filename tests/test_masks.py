@@ -45,5 +45,5 @@ def test_get_mask_account_number_success(account_number, expected):
                          ]
 )
 def test_get_account_number_invalid(invalid_account):
-    with pytest.raises(ValueError, match="Номер счёта должен содержать только цифры (минимум 4)"):
+    with pytest.raises(ValueError, match="Номер счета должен содержать только цифры (минимум 4)"):
         get_mask_account(invalid_account)
