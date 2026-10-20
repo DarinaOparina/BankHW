@@ -12,3 +12,26 @@ def sample_data():
 @pytest.fixture
 def empty_data():
     return []
+
+@pytest.fixture
+def sample_transactions():
+    return [
+        {
+            "id": 939719570,
+            "state": "EXECUTED",
+            "operationAmount": {"amount": "9824.07", "currency": {"name": "USD", "code": "USD"}},
+            "description": "Перевод организации",
+        },
+        {
+            "id": 142264268,
+            "state": "EXECUTED",
+            "operationAmount": {"amount": "79114.93", "currency": {"name": "USD", "code": "USD"}},
+            "description": "Перевод со счета на счет",
+        },
+        {
+            "id": 41428829,
+            "state": "EXECUTED",
+            "operationAmount": {"amount": "43573.71", "currency": {"name": "руб.", "code": "RUB"}},
+            "description": "Перевод организации",
+        },
+    ]
