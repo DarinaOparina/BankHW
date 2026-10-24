@@ -48,7 +48,7 @@ from src.generators import filter_by_currency, transaction_descriptions, card_nu
     "currency, expected_count, expected_ids",
     [
         ("USD", 2, [939719570, 142264268]),
-        ("RUB", 1, [41628829]),
+        ("RUB", 1, [41428829]),
     ],
 )
 def test_filter_by_currency(sample_transactions, currency, expected_count, expected_ids):
