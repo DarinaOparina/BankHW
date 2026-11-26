@@ -1,6 +1,7 @@
 from src.masks import get_mask_account, get_mask_card_number
 
-def mask_account_card (data: str) -> str:
+
+def mask_account_card(data: str) -> str:
     """Маскирует номер карты или счёта"""
     parts = data.split()
 
@@ -16,7 +17,7 @@ def mask_account_card (data: str) -> str:
     return f"{name} {masked_number}"
 
 
-def get_data (date_str: str) -> str:
+def get_data(date_str: str) -> str:
     """Преобразует строку с датой в формат ДД.ММ.ГГГГ."""
     date_part = date_str.split("T")[0]
 
