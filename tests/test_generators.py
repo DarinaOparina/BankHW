@@ -1,6 +1,10 @@
 import pytest
-from src.generators import filter_by_currency, transaction_descriptions, card_number_generator
 
+from src.generators import (
+    card_number_generator,
+    filter_by_currency,
+    transaction_descriptions,
+)
 
 # def test_filter_by_currency_usd(sample_transactions):
 #     """Проверка правильности фильтрации по USD"""
@@ -44,6 +48,7 @@ from src.generators import filter_by_currency, transaction_descriptions, card_nu
 #     result = list(card_number_generator(5, 5))
 #     assert result == ["0000 0000 0000 0005"]
 
+
 @pytest.mark.parametrize(
     "currency, expected_count, expected_ids",
     [
@@ -51,7 +56,9 @@ from src.generators import filter_by_currency, transaction_descriptions, card_nu
         ("RUB", 1, [41428829]),
     ],
 )
-def test_filter_by_currency(sample_transactions, currency, expected_count, expected_ids):
+def test_filter_by_currency(
+    sample_transactions, currency, expected_count, expected_ids
+):
     """Проверка правильности фильтрации по валютам"""
     result = list(filter_by_currency(sample_transactions, currency))
     assert len(result) == expected_count
@@ -67,7 +74,11 @@ def test_filter_by_currency_empty():
 def test_transaction_descriptions(sample_transactions):
     """Проверка получения правильных описаний"""
     descriptions = list(transaction_descriptions(sample_transactions))
-    assert descriptions == ["Перевод организации", "Перевод со счета на счет", "Перевод организации"]
+    assert descriptions == [
+        "Перевод организации",
+        "Перевод со счета на счет",
+        "Перевод организации",
+    ]
 
 
 def test_transaction_descriptions_empty():
