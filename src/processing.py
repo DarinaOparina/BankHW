@@ -1,4 +1,4 @@
-def filter_by_state(data: list[dict[str, str | int]], state: str= "EXECUTED") -> list[dict[str, str | int]]:
+def filter_by_state(data: list[dict[str, str | int]], state: str = "EXECUTED") -> list[dict[str, str | int]]:
     """Фильтрует список словарей по значению ключа 'state'."""
     return [item for item in data if item.get("state") == state]
 
