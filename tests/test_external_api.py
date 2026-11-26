@@ -8,7 +8,7 @@ def test_convert_to_rub_from_rub() -> None:
     transaction = {
         "operationAmount": {
             "amount": "31957.58",
-            "currency": {"name": "руб.", "code": "RUB"}
+            "currency": {"name": "руб.", "code": "RUB"},
         }
     }
     assert convert_to_rub(transaction) == 31957.58
@@ -16,7 +16,7 @@ def test_convert_to_rub_from_rub() -> None:
 
 @patch("src.external_api.requests.get")
 def test_convert_to_rub_from_usd(mock_get: Mock) -> None:
-    """" Тест конв-ции из usd -> rub"""
+    """ " Тест конв-ции из usd -> rub"""
     mock_response = Mock()
     mock_response.json.return_value = {"result": 9500.50}
     mock_get.return_value = mock_response
@@ -24,7 +24,7 @@ def test_convert_to_rub_from_usd(mock_get: Mock) -> None:
     transaction = {
         "operationAmount": {
             "amount": "100.0",
-            "currency": {"name": "USD", "code": "USD"}
+            "currency": {"name": "USD", "code": "USD"},
         }
     }
     assert convert_to_rub(transaction) == 9500.50
