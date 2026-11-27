@@ -1,5 +1,6 @@
 import pytest
 
+
 @pytest.fixture
 def sample_data():
     return [
@@ -9,9 +10,11 @@ def sample_data():
         {"id": 4, "state": "PENDING", "date": "2023-12-01T10:00:00"},
     ]
 
+
 @pytest.fixture
 def empty_data():
     return []
+
 
 @pytest.fixture
 def sample_transactions():
@@ -19,19 +22,28 @@ def sample_transactions():
         {
             "id": 939719570,
             "state": "EXECUTED",
-            "operationAmount": {"amount": "9824.07", "currency": {"name": "USD", "code": "USD"}},
+            "operationAmount": {
+                "amount": "9824.07",
+                "currency": {"name": "USD", "code": "USD"},
+            },
             "description": "Перевод организации",
         },
         {
             "id": 142264268,
             "state": "EXECUTED",
-            "operationAmount": {"amount": "79114.93", "currency": {"name": "USD", "code": "USD"}},
+            "operationAmount": {
+                "amount": "79114.93",
+                "currency": {"name": "USD", "code": "USD"},
+            },
             "description": "Перевод со счета на счет",
         },
         {
             "id": 41428829,
             "state": "EXECUTED",
-            "operationAmount": {"amount": "43573.71", "currency": {"name": "руб.", "code": "RUB"}},
+            "operationAmount": {
+                "amount": "43573.71",
+                "currency": {"name": "руб.", "code": "RUB"},
+            },
             "description": "Перевод организации",
         },
     ]

@@ -1,13 +1,18 @@
 import pytest
+
 from src.decorators import log
 
 
-@pytest.mark.parametrize("action, expected", [
-    ("success", "test_func ok\n"),
-    ("error", "test_func error: ZeroDivisionError. Inputs: (), {}\n")
-])
+@pytest.mark.parametrize(
+    "action, expected",
+    [
+        ("success", "test_func ok\n"),
+        ("error", "test_func error: ZeroDivisionError. Inputs: (), {}\n"),
+    ],
+)
 def test_log_console(capsys, action, expected):
     """Тестирует вывод в консоль"""
+
     @log()
     def test_func():
         if action == "error":
@@ -23,10 +28,13 @@ def test_log_console(capsys, action, expected):
     assert capsys.readouterr().out == expected
 
 
-@pytest.mark.parametrize("action, expected", [
-    ("success", "test_func_file ok\n"),
-    ("error", "test_func_file error: ValueError. Inputs: (), {}\n")
-])
+@pytest.mark.parametrize(
+    "action, expected",
+    [
+        ("success", "test_func_file ok\n"),
+        ("error", "test_func_file error: ValueError. Inputs: (), {}\n"),
+    ],
+)
 def test_log_file(tmp_path, action, expected):
     """Тестирует вывод в файл"""
     log_file = tmp_path / "log.txt"

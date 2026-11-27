@@ -15,7 +15,7 @@ def transaction_descriptions(transactions):
 
 def card_number_generator(start, stop):
     """Генерирует номера банковских карт в заданном диапазоне"""
-    for number in range(start, stop +1):
+    for number in range(start, stop + 1):
         card_str = str(number)
 
         while len(card_str) < 16:
@@ -26,4 +26,4 @@ def card_number_generator(start, stop):
         block3 = card_str[8:12]
         block4 = card_str[12:16]
 
-        yield  block1 + " " + block2 + " " + block3 + " " + block4
+        yield block1 + " " + block2 + " " + block3 + " " + block4

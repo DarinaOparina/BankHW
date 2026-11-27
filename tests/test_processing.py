@@ -1,13 +1,15 @@
 import pytest
+
 from src.processing import filter_by_state, sort_by_date
 
 
-@pytest.mark.parametrize("state, expected_ids",
-                         [
-                             ("EXECUTED", [1, 3]),
-                             ("CANCELED", [2]),
-                             ("PENDING", [4]),
-                         ]
+@pytest.mark.parametrize(
+    "state, expected_ids",
+    [
+        ("EXECUTED", [1, 3]),
+        ("CANCELED", [2]),
+        ("PENDING", [4]),
+    ],
 )
 def test_filter_by_state(sample_data, state, expected_ids):
     result = filter_by_state(sample_data, state)
